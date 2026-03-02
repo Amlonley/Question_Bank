@@ -1,0 +1,1160 @@
+﻿<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="داشبورد شخصی بانک سوالات ریاضی">
+  <meta name="application-name" content="بانک سوالات ریاضی">
+  <meta name="theme-color" content="#123b66" id="themeColorMeta">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="بانک سوالات">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>داشبورد بانک سوالات ریاضی</title>
+  <link rel="manifest" href="manifest.webmanifest?v=20260228-premium-brand-v8">
+  <link rel="icon" href="favicon.ico?v=20260228-premium-brand-v8" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png?v=20260228-premium-brand-v8">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png?v=20260228-premium-brand-v8">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png?v=20260228-premium-brand-v8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style id="student-info-form-polish">
+    .profile-card-form.profile-card-form-modern {
+      --control-h: 44px;
+      --control-radius: 14px;
+      --field-gap: 8px;
+      position: relative;
+      overflow: hidden;
+      border-color: var(--line);
+      background:
+        radial-gradient(circle at 8% 10%, var(--accent-soft), transparent 34%),
+        radial-gradient(circle at 88% 84%, var(--accent-soft), transparent 42%),
+        linear-gradient(150deg, var(--surface-strong), var(--surface-soft));
+      box-shadow: 0 18px 34px rgba(3, 10, 18, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .profile-card-form.profile-card-form-modern::before {
+      content: "";
+      position: absolute;
+      inset-inline: 16px;
+      top: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      pointer-events: none;
+    }
+
+    .profile-card-form-modern .profile-card-headline.profile-card-headline-modern {
+      margin-bottom: 10px;
+      display: grid;
+      gap: 0;
+    }
+
+    .profile-card-form-modern .profile-card-headline h3 {
+      margin: 0;
+      font-size: clamp(1.04rem, 2.2vw, 1.2rem);
+      line-height: 1.42;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+    }
+
+    .profile-card-form-modern .profile-form-grid {
+      display: grid;
+      grid-template-columns: 1fr !important;
+      gap: 9px;
+      align-items: start;
+      grid-auto-flow: row;
+    }
+
+    .profile-card-form-modern .profile-field {
+      min-width: 0;
+      display: grid;
+      gap: var(--field-gap);
+      align-content: start;
+    }
+
+    .profile-card-form-modern .profile-field-label {
+      margin: 0;
+      font-size: 0.81rem;
+      line-height: 1.4;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .profile-card-form-modern .profile-required-mark {
+      color: #ff8e99;
+      font-size: 0.95rem;
+      font-weight: 700;
+      vertical-align: baseline;
+    }
+
+    .profile-card-form-modern .profile-input-shell {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: center;
+      min-height: var(--control-h);
+      border-radius: var(--control-radius);
+      border: 1px solid var(--line);
+      background: var(--surface-soft);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      transition: border-color 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+    }
+
+    .profile-card-form-modern .profile-input-icon {
+      width: 30px;
+      height: 30px;
+      margin-inline-start: 8px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: var(--accent-soft);
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .profile-card-form-modern .profile-input-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.85;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .profile-card-form-modern .profile-input-shell:focus-within {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft), 0 8px 16px rgba(4, 16, 29, 0.2);
+      background: var(--surface);
+    }
+
+    .profile-card-form-modern .form-control.profile-control-input {
+      width: 100%;
+      height: var(--control-h);
+      min-height: var(--control-h);
+      padding-inline: 12px;
+      border: 0;
+      border-radius: calc(var(--control-radius) - 1px);
+      background: transparent;
+      color: var(--text-main);
+      font-family: "Vazirmatn", sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.35;
+      box-sizing: border-box;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      outline: none;
+    }
+
+    .profile-card-form-modern .form-control.profile-control-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .profile-card-form-modern .profile-input-shell-select .form-control.profile-control-input {
+      cursor: pointer;
+      padding-inline-start: 12px;
+      padding-inline-end: 12px;
+      background-image: linear-gradient(45deg, transparent 50%, var(--text-muted) 50%), linear-gradient(135deg, var(--text-muted) 50%, transparent 50%);
+      background-repeat: no-repeat;
+      background-size: 7px 7px, 7px 7px;
+      background-position: left 13px center, left 8px center;
+    }
+
+    .profile-card-form-modern .form-error {
+      margin: 0;
+      font-size: 0.74rem;
+      line-height: 1.45;
+      font-weight: 700;
+      color: #ffb8b8;
+      text-align: right;
+      overflow-wrap: anywhere;
+      margin-top: 4px;
+    }
+
+    .profile-card-form-modern .form-error[hidden] {
+      display: none !important;
+    }
+
+    .profile-card-form-modern .profile-field.is-invalid .profile-input-shell,
+    .profile-card-form-modern .profile-control-input[aria-invalid="true"] {
+      border-color: rgba(255, 143, 143, 0.68);
+      box-shadow: 0 0 0 3px rgba(255, 94, 94, 0.18);
+    }
+
+    .profile-card-form-modern .profile-field.is-invalid .profile-input-icon {
+      border-color: rgba(255, 150, 150, 0.44);
+      background: rgba(255, 108, 108, 0.16);
+      color: #ffd2d2;
+    }
+
+    .profile-card-form-modern .profile-form-actions {
+      margin-top: 6px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    @media (min-width: 560px) {
+      .profile-card-form-modern .profile-form-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .profile-card-form-modern .profile-save-btn.form-control {
+      width: 100%;
+      min-height: 42px;
+      border-radius: 13px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 14% 18%, var(--accent-soft), transparent 42%),
+        linear-gradient(145deg, var(--accent-soft), transparent),
+        var(--surface-strong);
+      color: var(--text-main);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.3;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .profile-card-form-modern .profile-save-btn.form-control:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 20px rgba(4, 16, 29, 0.26);
+    }
+
+    .profile-card-form-modern .profile-save-btn.form-control:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px var(--accent-soft), 0 8px 16px rgba(4, 16, 29, 0.2);
+    }
+
+    .profile-card-form-modern .profile-semester-btn.form-control {
+      width: 100%;
+      min-height: 42px;
+      border-radius: 13px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 18% 20%, var(--accent-soft), transparent 40%),
+        linear-gradient(150deg, var(--accent-soft), transparent),
+        var(--surface-soft);
+      color: var(--text-main);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.3;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .profile-card-form-modern .profile-semester-btn.form-control:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 18px rgba(4, 16, 29, 0.24);
+    }
+
+    .profile-card-form-modern .profile-semester-btn.form-control:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px var(--accent-soft), 0 8px 16px rgba(4, 16, 29, 0.18);
+    }
+
+    @media (max-width: 420px) {
+      .profile-card-form.profile-card-form-modern {
+        --control-h: 42px;
+      }
+
+      .profile-card-form-modern .profile-input-icon {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    html[data-theme^="light-"] .profile-card-form.profile-card-form-modern {
+      border-color: var(--line);
+      background:
+        radial-gradient(circle at 8% 10%, var(--accent-soft), transparent 34%),
+        radial-gradient(circle at 88% 84%, var(--accent-soft), transparent 42%),
+        linear-gradient(150deg, var(--surface), var(--surface-soft));
+      box-shadow: 0 18px 30px rgba(24, 55, 83, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.88);
+    }
+
+    html[data-theme^="light-"] .profile-card-form-modern .profile-card-headline h3 {
+      color: var(--text-main);
+    }
+
+    html[data-theme^="light-"] .profile-card-form-modern .profile-input-shell {
+      border-color: var(--line);
+      background: var(--surface);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+
+    html[data-theme^="light-"] .profile-card-form-modern .profile-input-icon {
+      border-color: var(--line);
+      background: var(--accent-soft);
+      color: var(--text-main);
+    }
+
+    html[data-theme^="light-"] .profile-card-form-modern .form-control.profile-control-input {
+      color: var(--text-main);
+    }
+
+    html[data-theme^="light-"] .profile-card-form-modern .form-control.profile-control-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .profile-card-form-modern .profile-input-shell,
+      .profile-card-form-modern .profile-save-btn.form-control,
+      .profile-card-form-modern .profile-semester-btn.form-control {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section id="appBootSplash" class="app-boot-splash" aria-live="polite" aria-label="در حال آماده سازی برنامه">
+    <div class="app-boot-card">
+      <span class="app-boot-logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <rect x="5" y="6" width="14" height="12" rx="2"></rect>
+          <path d="M12 6v12"></path>
+          <path d="M12 9.2c1.8 0 3 1.1 3 2.5 0 1-.5 1.6-1.5 2.2-.8.5-1.1.9-1.1 1.7"></path>
+          <path d="M12 15.9v.1"></path>
+          <path d="M7.3 9.5h2"></path>
+          <path d="M7.3 12h1.6"></path>
+          <path d="M17.7 8.2 20 6.8"></path>
+          <path d="M18 7.3h2.2"></path>
+        </svg>
+      </span>
+      <strong class="app-boot-title">بانک سوالات</strong>
+      <p class="app-boot-subtitle">در حال آماده سازی محیط برنامه...</p>
+      <span class="app-boot-loader" aria-hidden="true"></span>
+    </div>
+  </section>
+
+  <div class="app-shell">
+    <header class="topbar premium-topbar qb-header app-header-v3" role="banner">
+      <div class="appbar-shell" role="toolbar" aria-label="نوار اصلی برنامه">
+        <div class="appbar-start appbar-zone" role="group" aria-label="ناوبری و زمینه">
+          <button id="headerBackBtn" class="appbar-icon-btn appbar-back-btn" type="button" data-action="header-back" aria-label="بازگشت" title="بازگشت" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.5 6 8.5 12l6 6"></path>
+            </svg>
+          </button>
+          <button class="appbar-brand-btn" type="button" data-action="goto-subjects" aria-label="بازگشت به صفحه درس‌ها">
+            <span class="header-brand-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect x="5" y="6" width="14" height="12" rx="2"></rect>
+                <path d="M12 6v12"></path>
+                <path d="M12 9.2c1.8 0 3 1.1 3 2.5 0 1-.5 1.6-1.5 2.2-.8.5-1.1.9-1.1 1.7"></path>
+                <path d="M12 15.9v.1"></path>
+                <path d="M7.3 9.5h2"></path>
+                <path d="M7.3 12h1.6"></path>
+                <path d="M17.7 8.2 20 6.8"></path>
+                <path d="M18 7.3h2.2"></path>
+              </svg>
+            </span>
+            <span class="appbar-brand-title">بانک سوالات</span>
+          </button>
+          <div class="appbar-hidden-meta" hidden aria-hidden="true">
+            <h1 id="headerPageTitle">بانک سوالات</h1>
+            <p id="headerQuickContext">نمای کلی همه درس‌ها</p>
+            <span id="headerQuickMode" aria-live="polite">نمایش: درس‌ها</span>
+          </div>
+        </div>
+
+        <div class="appbar-center appbar-zone" role="group" aria-label="جابجایی بین بخش‌ها">
+          <nav class="appbar-segmented" aria-label="بخش‌های اصلی">
+            <button id="headerQuickGotoSubjects" type="button" class="appbar-segment-btn" data-action="goto-subjects" aria-label="درس‌ها">
+              <span>درس‌ها</span>
+            </button>
+            <button id="headerQuickGotoChapters" type="button" class="appbar-segment-btn" data-action="goto-chapters" aria-label="فصل‌ها">
+              <span>فصل‌ها</span>
+            </button>
+            <button id="headerQuickTabBank" type="button" class="appbar-segment-btn" data-action="switch-tab" data-tab="bank" aria-label="بانک سوالات">
+              <span>بانک</span>
+            </button>
+            <button id="headerQuickTabPractice" type="button" class="appbar-segment-btn" data-action="switch-tab" data-tab="practice" aria-label="حالت تمرین">
+              <span>تمرین</span>
+            </button>
+            <button id="headerQuickTabExam" type="button" class="appbar-segment-btn appbar-segment-btn-extended" data-action="switch-tab" data-tab="exam" aria-label="حالت آزمون">
+              <span>آزمون</span>
+            </button>
+            <button id="headerQuickTabMap" type="button" class="appbar-segment-btn appbar-segment-btn-extended" data-action="switch-tab" data-tab="chapter-map" aria-label="نمودار درختی">
+              <span>درختی</span>
+            </button>
+          </nav>
+          <div class="appbar-mobile-title" aria-label="بانک سوالات">
+            <span class="appbar-mobile-title-orb" aria-hidden="true"></span>
+            <span class="appbar-mobile-title-text">بانک سوالات</span>
+          </div>
+        </div>
+
+        <div class="appbar-end appbar-zone" role="group" aria-label="اقدام‌های سریع">
+          <span id="headerSyncPill" class="appbar-chip appbar-chip-sync appbar-sync-indicator" aria-live="polite" data-state="muted">همگام‌سازی: غیرفعال</span>
+          <button id="headerSearchBtn" class="appbar-icon-btn" type="button" data-action="focus-primary-search" aria-label="جستجو">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.2"></circle>
+              <path d="M16 16 20 20"></path>
+            </svg>
+          </button>
+          <button id="settingsPanelToggle" class="appbar-icon-btn appbar-settings-btn" type="button" data-action="toggle-settings-panel" aria-expanded="false" aria-controls="settingsPanel" aria-label="تنظیمات">
+            <svg class="settings-trigger-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="3.5"></circle>
+              <path d="M19.4 15a1 1 0 0 0 .2 1.1l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1 1 0 0 0-1.1-.2 1 1 0 0 0-.6.9V20a2 2 0 1 1-4 0v-.2a1 1 0 0 0-.6-.9 1 1 0 0 0-1.1.2l-.1.1a2 2 0 0 1-2.8-2.8l.1-.1a1 1 0 0 0 .2-1.1 1 1 0 0 0-.9-.6H4a2 2 0 1 1 0-4h.2a1 1 0 0 0 .9-.6 1 1 0 0 0-.2-1.1l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1 1 0 0 0 1.1.2 1 1 0 0 0 .6-.9V4a2 2 0 1 1 4 0v.2a1 1 0 0 0 .6.9 1 1 0 0 0 1.1-.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1 1 0 0 0-.2 1.1 1 1 0 0 0 .9.6H20a2 2 0 1 1 0 4h-.2a1 1 0 0 0-.9.6z"></path>
+            </svg>
+            <span class="settings-trigger-status" aria-hidden="true"></span>
+          </button>
+          <button id="headerOverflowToggle" class="appbar-icon-btn appbar-overflow-toggle" type="button" data-action="toggle-header-overflow" aria-expanded="false" aria-controls="headerOverflowMenu" aria-label="گزینه‌های بیشتر">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="6" cy="12" r="1.7"></circle>
+              <circle cx="12" cy="12" r="1.7"></circle>
+              <circle cx="18" cy="12" r="1.7"></circle>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="headerOverflowMenu" class="appbar-overflow-menu" hidden role="menu" aria-label="گزینه‌های بیشتر">
+        <button type="button" class="appbar-overflow-item appbar-overflow-mobile-only" role="menuitem" data-action="goto-subjects">درس‌ها</button>
+        <button type="button" class="appbar-overflow-item appbar-overflow-mobile-only" role="menuitem" data-action="goto-chapters">فصل‌ها</button>
+        <button type="button" class="appbar-overflow-item appbar-overflow-mobile-only" role="menuitem" data-action="switch-tab" data-tab="exam">آزمون</button>
+        <button type="button" class="appbar-overflow-item appbar-overflow-mobile-only" role="menuitem" data-action="switch-tab" data-tab="chapter-map">نمودار درختی</button>
+        <button type="button" class="appbar-overflow-item" role="menuitem" data-action="install-app" aria-label="نصب نسخه مستقل اپ">
+          <span data-install-label>نصب اپ</span>
+        </button>
+        <button type="button" class="appbar-overflow-item" role="menuitem" data-action="toggle-settings-panel">تنظیمات</button>
+        <button type="button" class="appbar-overflow-item" role="menuitem" data-action="sync-google-drive">همگام‌سازی</button>
+      </div>
+
+      <section id="headerSectionsSheet" class="appbar-sections-sheet" hidden aria-hidden="true">
+        <div class="appbar-sections-backdrop" data-action="close-sections-sheet"></div>
+        <article class="appbar-sections-panel" role="dialog" aria-modal="true" aria-labelledby="headerSectionsTitle">
+          <header class="appbar-sections-head">
+            <h2 id="headerSectionsTitle">بخش‌ها</h2>
+            <button class="appbar-sections-close" type="button" data-action="close-sections-sheet" aria-label="بستن">×</button>
+          </header>
+          <nav class="appbar-sections-list" aria-label="ناوبری بخش‌های برنامه">
+            <button type="button" class="appbar-sections-item" data-action="goto-subjects">درس‌ها</button>
+            <button type="button" class="appbar-sections-item" data-action="goto-chapters">فصل‌ها</button>
+            <button type="button" class="appbar-sections-item" data-action="switch-tab" data-tab="bank">بانک سوالات</button>
+            <button type="button" class="appbar-sections-item" data-action="switch-tab" data-tab="practice">تمرین</button>
+            <button type="button" class="appbar-sections-item" data-action="switch-tab" data-tab="exam">آزمون</button>
+            <button type="button" class="appbar-sections-item" data-action="switch-tab" data-tab="chapter-map">نمودار درختی</button>
+          </nav>
+        </article>
+      </section>
+
+      <section id="settingsPanel" class="settings-panel settings-panel-premium" aria-hidden="true">
+          <header class="settings-panel-head">
+            <h3>تنظیمات</h3>
+            <p>کنترل دقیق ظاهر، همگام سازی ابری و ابزارهای نگه داری تنظیمات</p>
+          </header>
+
+          <div class="settings-panel-layout">
+            <aside class="settings-panel-side">
+              <section class="settings-overview-strip" aria-live="polite">
+                <article class="settings-overview-card">
+                  <span class="settings-overview-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"></path><path d="M4 10h16"></path><path d="M10 10v9"></path></svg>
+                  </span>
+                  <div class="settings-overview-copy">
+                    <span class="settings-overview-label">بانک سوالات</span>
+                    <strong id="settingsOverviewData">0 درس • 0 فصل • 0 سوال</strong>
+                  </div>
+                </article>
+                <article class="settings-overview-card">
+                  <span class="settings-overview-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 18 0"></path><path d="M7 12a5 5 0 1 1 10 0"></path><circle cx="12" cy="12" r="1.6"></circle></svg>
+                  </span>
+                  <div class="settings-overview-copy">
+                    <span class="settings-overview-label">ظاهر فعال</span>
+                    <strong id="settingsOverviewAppearance">تم تیره گرافیتی • نمایش خودکار</strong>
+                  </div>
+                </article>
+                <article class="settings-overview-card">
+                  <span class="settings-overview-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c1.8-3.2 4.2-4.8 7-4.8S17.2 16.8 19 20"></path></svg>
+                  </span>
+                  <div class="settings-overview-copy">
+                    <span class="settings-overview-label">پروفایل کاربر</span>
+                    <strong id="settingsOverviewProfile">در حال تکمیل</strong>
+                  </div>
+                </article>
+                <article class="settings-overview-card">
+                  <span class="settings-overview-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M5 16v-3a7 7 0 0 1 14 0v3"></path><rect x="4" y="16" width="16" height="4" rx="2"></rect></svg>
+                  </span>
+                  <div class="settings-overview-copy">
+                    <span class="settings-overview-label">وضعیت ابر</span>
+                    <strong id="settingsOverviewCloud">نیازمند تکمیل</strong>
+                  </div>
+                </article>
+              </section>
+            </aside>
+
+            <section class="settings-panel-workspace">
+              <nav class="settings-tab-strip" role="tablist" aria-label="بخش های تنظیمات">
+                <button class="settings-tab-btn is-active" type="button" role="tab" aria-selected="true" data-action="switch-settings-tab" data-tab="appearance">
+                  <span class="settings-tab-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path><circle cx="8" cy="7" r="1.8"></circle><circle cx="16" cy="12" r="1.8"></circle><circle cx="10" cy="17" r="1.8"></circle></svg>
+                  </span>
+                  <span class="settings-tab-dot" aria-hidden="true"></span>
+                  <span class="settings-tab-text">ظاهر</span>
+                </button>
+                <button class="settings-tab-btn" type="button" role="tab" aria-selected="false" data-action="switch-settings-tab" data-tab="cloud-sync">
+                  <span class="settings-tab-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M6 16a4 4 0 1 1 .7-7.9A5 5 0 0 1 18 10a3 3 0 1 1 0 6z"></path><path d="M12 13v6"></path><path d="m9.5 16.5 2.5 2.5 2.5-2.5"></path></svg>
+                  </span>
+                  <span class="settings-tab-dot" aria-hidden="true"></span>
+                  <span class="settings-tab-text">همگام سازی ابری</span>
+                </button>
+                <button class="settings-tab-btn" type="button" role="tab" aria-selected="false" data-action="switch-settings-tab" data-tab="advanced">
+                  <span class="settings-tab-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"></circle><path d="M19.4 15a1 1 0 0 0 .2 1.1l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1 1 0 0 0-1.1-.2 1 1 0 0 0-.6.9V20a2 2 0 1 1-4 0v-.2a1 1 0 0 0-.6-.9 1 1 0 0 0-1.1.2l-.1.1a2 2 0 0 1-2.8-2.8l.1-.1a1 1 0 0 0 .2-1.1 1 1 0 0 0-.9-.6H4a2 2 0 1 1 0-4h.2a1 1 0 0 0 .9-.6 1 1 0 0 0-.2-1.1l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1 1 0 0 0 1.1.2 1 1 0 0 0 .6-.9V4a2 2 0 1 1 4 0v.2a1 1 0 0 0 .6.9 1 1 0 0 0 1.1-.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1 1 0 0 0-.2 1.1 1 1 0 0 0 .9.6H20a2 2 0 1 1 0 4h-.2a1 1 0 0 0-.9.6z"></path></svg>
+                  </span>
+                  <span class="settings-tab-dot" aria-hidden="true"></span>
+                  <span class="settings-tab-text">پیشرفته</span>
+                </button>
+              </nav>
+
+              <section class="settings-tab-panel is-active" data-tab-panel="appearance">
+                <header class="settings-section-head">
+                  <div class="settings-section-title">
+                    <span class="settings-section-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path><circle cx="8" cy="7" r="1.8"></circle><circle cx="16" cy="12" r="1.8"></circle><circle cx="10" cy="17" r="1.8"></circle></svg>
+                    </span>
+                    <h4>سفارشی سازی ظاهر</h4>
+                  </div>
+                  <p>تم و نوع نمایش را مطابق دستگاه و سلیقه خود تنظیم کنید.</p>
+                </header>
+                <div class="settings-grid settings-grid-appearance settings-mode-grid">
+                  <label class="control-field settings-mode-card" for="themeSelect">
+                    <span class="settings-mode-head">
+                      <span class="settings-mode-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.6-.1-1.2-.2-1.8A7 7 0 0 1 12 3z"></path></svg>
+                      </span>
+                      <span>تم ظاهری</span>
+                    </span>
+                    <select id="themeSelect" aria-label="انتخاب تم">
+                      <option value="dark-graphite">تیره گرافیتی</option>
+                      <option value="dark-ocean">تیره اقیانوسی</option>
+                      <option value="dark-forest">تیره جنگلی</option>
+                      <option value="dark-ember">تیره کهربایی</option>
+                      <option value="dark-midnight-amethyst">تیره آمتیست نیمه شب</option>
+                      <option value="dark-warm-espresso">تیره اسپرسو گرم</option>
+                      <option value="dark-deep-teal">تیره سبز آبی عمیق</option>
+                      <option value="dark-crimson-night">تیره شب زرشکی</option>
+                      <option value="dark-lunar-slate">تیره سنگی مهتابی</option>
+                      <option value="dark-cosmic-void">تیره خلأ کیهانی</option>
+                      <option value="light-paper">روشن کاغذی</option>
+                      <option value="light-ice">روشن یخی</option>
+                    </select>
+                  </label>
+
+                  <div class="settings-mode-card settings-mode-card-toggle">
+                    <span class="settings-mode-head">
+                      <span class="settings-mode-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2.5"></rect><path d="M12 5v14"></path></svg>
+                      </span>
+                      <span>حالت نمایش</span>
+                    </span>
+                    <div id="viewportModeBar" class="viewport-mode-bar" role="group" aria-label="انتخاب حالت نمایش">
+                      <button type="button" class="viewport-mode-btn is-active" data-action="set-viewport-mode" data-mode="auto" aria-pressed="true">
+                        <span>خودکار</span>
+                        <small class="viewport-mode-state">دسکتاپ</small>
+                      </button>
+                      <button type="button" class="viewport-mode-btn" data-action="set-viewport-mode" data-mode="desktop" aria-pressed="false">دسکتاپ</button>
+                      <button type="button" class="viewport-mode-btn" data-action="set-viewport-mode" data-mode="mobile" aria-pressed="false">موبایل</button>
+                    </div>
+                  </div>
+
+                  <div class="settings-mode-card settings-mode-card-hybrid">
+                    <span class="settings-mode-head">
+                      <span class="settings-mode-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M4 12h16"></path><path d="M12 4v16"></path><rect x="3.5" y="3.5" width="17" height="17" rx="3"></rect></svg>
+                      </span>
+                      <span>چرخش هیبرید</span>
+                    </span>
+                    <p class="settings-mode-note">حالت پیش فرض Portrait قفل می ماند. اگر فعالش کنی، داخل بانک سوالات، تمرین، آزمون و نمودار درختی Landscape هم مجاز می شود.</p>
+                    <button
+                      id="scheduleLandscapeToggleBtn"
+                      type="button"
+                      class="hybrid-orientation-btn"
+                      data-action="toggle-schedule-landscape"
+                      aria-pressed="false"
+                    >
+                      <span class="hybrid-orientation-btn-label">Landscape برای سوال ها و نمودار درختی</span>
+                      <small id="scheduleLandscapeToggleState" class="hybrid-orientation-btn-state">غیرفعال</small>
+                    </button>
+                  </div>
+                </div>
+                <div class="settings-inline-actions">
+                  <button class="glass-btn ghost-btn" type="button" data-action="reset-appearance-settings">بازگردانی ظاهر پیش فرض</button>
+                </div>
+              </section>
+
+              <section class="settings-tab-panel" data-tab-panel="cloud-sync">
+                <div class="drive-sync-redesign">
+                  <header class="drive-sync-redesign-head">
+                    <div class="drive-sync-redesign-title">
+                      <span class="settings-section-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M6 16a4 4 0 1 1 .7-7.9A5 5 0 0 1 18 10a3 3 0 1 1 0 6z"></path><path d="M12 13v6"></path><path d="m9.5 16.5 2.5 2.5 2.5-2.5"></path></svg>
+                      </span>
+                      <h4>اتصال گوگل درایو</h4>
+                    </div>
+                    <span id="driveSyncStatePill" class="settings-state-pill settings-state-muted">تنظیم نشده</span>
+                  </header>
+
+                  <p class="drive-sync-redesign-intro">با ذخیره شناسه مشتری، همگام سازی بین دستگاه ها روی یک فایل مشترک گوگل درایو انجام می شود.</p>
+
+                  <div class="drive-sync-redesign-form">
+                    <label class="drive-field-group" for="driveClientId">
+                      <span class="drive-field-label">شناسه مشتری</span>
+                      <input id="driveClientId" type="text" autocomplete="off" spellcheck="false" placeholder="xxxx.apps.googleusercontent.com" data-action="drive-config-input">
+                      <small class="drive-field-hint">نمونه: `1234567890-abcxyz.apps.googleusercontent.com`</small>
+                    </label>
+
+                    <label class="drive-field-group" for="driveSyncProfileSelect">
+                      <span class="drive-field-label">پروفایل سینک خودکار</span>
+                      <select id="driveSyncProfileSelect" data-action="drive-sync-profile" aria-label="انتخاب پروفایل سینک">
+                        <option value="low-power">کم‌مصرف (پیش‌فرض)</option>
+                        <option value="balanced">متعادل</option>
+                        <option value="fast">سریع</option>
+                      </select>
+                      <small id="driveSyncProfileHint" class="drive-field-hint">پروفایل کم‌مصرف فعال است.</small>
+                    </label>
+
+                  </div>
+
+                  <footer class="drive-sync-redesign-footer">
+                    <p id="settingsDriveMeta" class="settings-meta-note">برای همگام سازی ابری، ابتدا اطلاعات اتصال را ذخیره کنید.</p>
+                    <div class="drive-sync-redesign-actions">
+                      <button class="glass-btn" type="button" data-action="save-drive-credentials">ذخیره اطلاعات اتصال</button>
+                      <button id="driveSyncBtn" class="glass-btn sync-drive-btn" type="button" data-action="sync-google-drive">
+                        <span class="sync-label">همگام سازی با گوگل درایو</span>
+                      </button>
+                    </div>
+                  </footer>
+
+                  <section class="drive-sync-diagnostics" aria-labelledby="driveSyncDiagnosticsTitle">
+                    <header class="drive-sync-diagnostics-head">
+                      <h5 id="driveSyncDiagnosticsTitle">عیب یابی همگام سازی</h5>
+                      <label class="drive-debug-toggle" for="driveSyncDebugToggle">
+                        <input id="driveSyncDebugToggle" type="checkbox" data-action="toggle-sync-debug">
+                        <span>لاگ دقیق کنسول</span>
+                      </label>
+                    </header>
+
+                    <div class="drive-sync-diagnostics-grid">
+                      <article class="drive-diag-item">
+                        <span class="drive-diag-label">اتصال</span>
+                        <span id="driveDiagConnected" class="drive-diag-value">نامشخص</span>
+                      </article>
+                      <article class="drive-diag-item">
+                        <span class="drive-diag-label">توکن</span>
+                        <span id="driveDiagToken" class="drive-diag-value">نامشخص</span>
+                      </article>
+                      <article class="drive-diag-item">
+                        <span class="drive-diag-label">File ID</span>
+                        <span id="driveDiagFileId" class="drive-diag-value">ثبت نشده</span>
+                      </article>
+                      <article class="drive-diag-item">
+                        <span class="drive-diag-label">ویرایش ابری</span>
+                        <span id="driveDiagRemoteModified" class="drive-diag-value">-</span>
+                      </article>
+                      <article class="drive-diag-item">
+                        <span class="drive-diag-label">MD5 ابری</span>
+                        <span id="driveDiagRemoteMd5" class="drive-diag-value">-</span>
+                      </article>
+                      <article class="drive-diag-item">
+                        <span class="drive-diag-label">هش داده محلی</span>
+                        <span id="driveDiagLocalHash" class="drive-diag-value">-</span>
+                      </article>
+                      <article class="drive-diag-item">
+                        <span class="drive-diag-label">آخرین Pull</span>
+                        <span id="driveDiagLastPull" class="drive-diag-value">-</span>
+                      </article>
+                      <article class="drive-diag-item">
+                        <span class="drive-diag-label">آخرین Push</span>
+                        <span id="driveDiagLastPush" class="drive-diag-value">-</span>
+                      </article>
+                      <article class="drive-diag-item drive-diag-item-wide">
+                        <span class="drive-diag-label">نتیجه آخرین Merge</span>
+                        <span id="driveDiagMergeResult" class="drive-diag-value">-</span>
+                      </article>
+                      <article class="drive-diag-item drive-diag-item-wide">
+                        <span class="drive-diag-label">آخرین خطا</span>
+                        <pre id="driveDiagLastError" class="drive-diag-error">-</pre>
+                        <button class="glass-btn ghost-btn drive-diag-copy-btn" type="button" data-action="copy-sync-error">کپی خطا</button>
+                      </article>
+                    </div>
+
+                    <div class="drive-sync-diagnostics-log">
+                      <div class="drive-sync-diagnostics-log-head">
+                        <span>لاگ مرحله های سینک</span>
+                        <button class="glass-btn ghost-btn drive-diag-copy-btn" type="button" data-action="copy-sync-log">کپی لاگ</button>
+                      </div>
+                      <pre id="driveSyncDebugLog" class="drive-sync-debug-log">لاگی ثبت نشده است.</pre>
+                    </div>
+                  </section>
+                </div>
+              </section>
+
+              <section class="settings-tab-panel" data-tab-panel="advanced">
+                <header class="settings-section-head">
+                  <div class="settings-section-title">
+                    <span class="settings-section-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24"><path d="M3 12h6"></path><path d="M15 12h6"></path><path d="M12 3v6"></path><path d="M12 15v6"></path><circle cx="12" cy="12" r="2.5"></circle></svg>
+                    </span>
+                    <h4>ابزارهای نگه داری</h4>
+                  </div>
+                  <p>پشتیبان گیری، بازیابی و مدیریت فایل همگام سازی در این بخش قرار دارد.</p>
+                </header>
+                <div class="settings-utility-grid">
+                  <article class="settings-utility-card">
+                    <h4 class="settings-card-title">
+                      <span class="settings-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"></path><path d="M4 10h16"></path><path d="M10 10v9"></path></svg></span>
+                      <span>مدیریت فایل همگام سازی</span>
+                    </h4>
+                    <label class="control-field" for="driveFileId">
+                      <span>شناسه آخرین فایل همگام شده</span>
+                      <input id="driveFileId" type="text" readonly autocomplete="off" placeholder="شناسه فایل بانک سوالات">
+                    </label>
+                    <div class="settings-inline-actions">
+                      <button class="glass-btn ghost-btn" type="button" data-action="clear-drive-file-id">پاک سازی شناسه فایل</button>
+                      <button class="glass-btn" type="button" data-action="sync-download">دریافت از درایو</button>
+                      <button class="glass-btn" type="button" data-action="sync-upload">ارسال به درایو</button>
+                    </div>
+                  </article>
+
+                  <article class="settings-utility-card">
+                    <h4 class="settings-card-title">
+                      <span class="settings-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v10"></path><path d="m8.5 10.5 3.5 3.5 3.5-3.5"></path><rect x="4" y="16" width="16" height="4" rx="1.8"></rect></svg></span>
+                      <span>پشتیبان تنظیمات</span>
+                    </h4>
+                    <p>خروجی تنظیمات فعلی را نگه دارید یا یک فایل تنظیمات معتبر را بازیابی کنید.</p>
+                    <input id="settingsImportInput" type="file" accept="application/json,.json" hidden data-action="import-settings-json">
+                    <div class="settings-inline-actions">
+                      <button class="glass-btn" type="button" data-action="export-settings-json">خروجی تنظیمات</button>
+                      <button class="glass-btn" type="button" data-action="open-settings-import">ورود تنظیمات</button>
+                    </div>
+                  </article>
+
+                  <article class="settings-utility-card settings-utility-card-danger settings-utility-card-wide">
+                    <h4 class="settings-card-title">
+                      <span class="settings-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M9 7V5h6v2"></path><rect x="6" y="7" width="12" height="13" rx="2"></rect><path d="M10 11v5"></path><path d="M14 11v5"></path></svg></span>
+                      <span>بازنشانی تنظیمات</span>
+                    </h4>
+                    <p>این گزینه فقط تنظیمات کاربری را ریست می کند و سوالات شما حذف نخواهد شد.</p>
+                    <div class="settings-inline-actions">
+                      <button class="glass-btn settings-danger-btn" type="button" data-action="reset-settings-all">بازنشانی کامل تنظیمات</button>
+                    </div>
+                  </article>
+                </div>
+              </section>
+            </section>
+          </div>
+        </section>
+    </header>
+
+    <section class="profile-hub" aria-label="پروفایل کاربر">
+      <div class="profile-hub-grid">
+        <article class="profile-card profile-card-identity" aria-labelledby="profileCardTitle">
+          <header class="profile-card-top">
+            <div class="profile-identity-cluster">
+              <span id="profileAvatar" class="profile-avatar-circle profile-avatar-premium" aria-hidden="true">
+                <span class="profile-avatar-orbit"></span>
+                <svg class="profile-avatar-glyph" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="8.3" r="3.1"></circle>
+                  <path d="M5.2 18.3c1.9-3.4 4.2-4.9 6.8-4.9s4.9 1.5 6.8 4.9"></path>
+                </svg>
+              </span>
+              <div class="profile-identity-copy">
+                <h2 id="profileCardTitle">پروفایل کاربری</h2>
+                <p>هویت دانشجو برای شخصی‌سازی نمایش‌ها و تنظیمات تمرین.</p>
+              </div>
+            </div>
+            <span id="profileSavePill" class="profile-save-pill" aria-live="polite">ذخیره نشده</span>
+          </header>
+          <p id="profileGreeting" class="profile-greeting-text">سلام دوست عزیز، پروفایل دانشجویی خودت را کامل کن.</p>
+          <p id="profileDateTime" class="profile-datetime-pill" aria-live="polite"></p>
+
+          <section class="profile-quick-access" aria-label="دسترسی سریع پروفایل">
+            <article class="profile-quick-card" aria-label="حالت نمایش">
+              <header class="profile-quick-head">
+                <span class="profile-quick-head-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2.5"></rect><path d="M12 5v14"></path></svg>
+                </span>
+                <strong>حالت نمایش</strong>
+              </header>
+              <div class="profile-quick-segment profile-quick-viewport-strip" role="group" aria-label="انتخاب حالت نمایش">
+                <button type="button" class="profile-quick-viewport-btn profile-quick-icon-btn" data-action="set-viewport-mode" data-mode="auto" aria-pressed="false" aria-label="حالت خودکار" title="حالت خودکار">
+                  <span class="profile-quick-btn-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><rect x="2.8" y="5" width="13.8" height="10.6" rx="1.9"></rect><path d="M7.8 19h3.8"></path><rect x="15.8" y="8.7" width="5.4" height="9.3" rx="1.5"></rect></svg>
+                  </span>
+                </button>
+                <button type="button" class="profile-quick-viewport-btn profile-quick-icon-btn" data-action="set-viewport-mode" data-mode="desktop" aria-pressed="false" aria-label="حالت دسکتاپ" title="حالت دسکتاپ">
+                  <span class="profile-quick-btn-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><rect x="3.2" y="5.2" width="17.6" height="11.8" rx="2.1"></rect><path d="M8.6 19h6.8"></path><path d="M12 17v2"></path></svg>
+                  </span>
+                </button>
+                <button type="button" class="profile-quick-viewport-btn profile-quick-icon-btn" data-action="set-viewport-mode" data-mode="mobile" aria-pressed="false" aria-label="حالت موبایل" title="حالت موبایل">
+                  <span class="profile-quick-btn-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><rect x="8" y="3.6" width="8" height="16.8" rx="2.1"></rect><path d="M11.2 6.4h1.6"></path><circle cx="12" cy="17.8" r=".75"></circle></svg>
+                  </span>
+                </button>
+              </div>
+            </article>
+
+            <article class="profile-quick-card" aria-label="انتخاب تم">
+              <header class="profile-quick-head">
+                <span class="profile-quick-head-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.6-.1-1.2-.2-1.8A7 7 0 0 1 12 3z"></path></svg>
+                </span>
+                <strong>انتخاب تم</strong>
+              </header>
+              <div class="profile-quick-segment profile-quick-theme-strip profile-quick-theme-rail" role="group" aria-label="انتخاب سریع تم">
+                <button type="button" class="profile-quick-theme-btn" data-action="profile-set-theme" data-theme="dark-graphite" aria-pressed="false" title="تیره گرافیتی" aria-label="تم تیره گرافیتی">
+                  <span class="profile-quick-theme-dot profile-theme-dot-graphite" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="profile-quick-theme-btn" data-action="profile-set-theme" data-theme="dark-ocean" aria-pressed="false" title="تیره اقیانوسی" aria-label="تم تیره اقیانوسی">
+                  <span class="profile-quick-theme-dot profile-theme-dot-ocean" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="profile-quick-theme-btn" data-action="profile-set-theme" data-theme="dark-forest" aria-pressed="false" title="تیره جنگلی" aria-label="تم تیره جنگلی">
+                  <span class="profile-quick-theme-dot profile-theme-dot-forest" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="profile-quick-theme-btn" data-action="profile-set-theme" data-theme="dark-ember" aria-pressed="false" title="تیره امبر" aria-label="تم تیره امبر">
+                  <span class="profile-quick-theme-dot profile-theme-dot-ember" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="profile-quick-theme-btn" data-action="profile-set-theme" data-theme="dark-midnight-amethyst" aria-pressed="false" title="تیره آمتیست نیمه شب" aria-label="تم تیره آمتیست نیمه شب">
+                  <span class="profile-quick-theme-dot profile-theme-dot-amethyst" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="profile-quick-theme-btn" data-action="profile-set-theme" data-theme="dark-warm-espresso" aria-pressed="false" title="تیره اسپرسو گرم" aria-label="تم تیره اسپرسو گرم">
+                  <span class="profile-quick-theme-dot profile-theme-dot-espresso" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="profile-quick-theme-btn" data-action="profile-set-theme" data-theme="dark-deep-teal" aria-pressed="false" title="تیره سبز آبی عمیق" aria-label="تم تیره سبز آبی عمیق">
+                  <span class="profile-quick-theme-dot profile-theme-dot-teal" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="profile-quick-theme-btn" data-action="profile-set-theme" data-theme="dark-crimson-night" aria-pressed="false" title="تیره شب زرشکی" aria-label="تم تیره شب زرشکی">
+                  <span class="profile-quick-theme-dot profile-theme-dot-crimson" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="profile-quick-theme-btn" data-action="profile-set-theme" data-theme="dark-lunar-slate" aria-pressed="false" title="تیره سنگی مهتابی" aria-label="تم تیره سنگی مهتابی">
+                  <span class="profile-quick-theme-dot profile-theme-dot-lunar" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="profile-quick-theme-btn" data-action="profile-set-theme" data-theme="dark-cosmic-void" aria-pressed="false" title="تیره خلأ کیهانی" aria-label="تم تیره خلأ کیهانی">
+                  <span class="profile-quick-theme-dot profile-theme-dot-void" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="profile-quick-theme-btn" data-action="profile-set-theme" data-theme="light-paper" aria-pressed="false" title="روشن کاغذی" aria-label="تم روشن کاغذی">
+                  <span class="profile-quick-theme-dot profile-theme-dot-light" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="profile-quick-theme-btn" data-action="profile-set-theme" data-theme="light-ice" aria-pressed="false" title="روشن یخی" aria-label="تم روشن یخی">
+                  <span class="profile-quick-theme-dot profile-theme-dot-ice" aria-hidden="true"></span>
+                </button>
+              </div>
+              <small id="profileQuickThemeLabel" class="profile-quick-meta">تم فعال: -</small>
+            </article>
+
+            <button id="profileQuickSyncBtn" class="profile-quick-sync-btn" type="button" data-action="sync-google-drive" aria-live="polite">
+              <span class="profile-quick-sync-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M7.7 14.5a3.7 3.7 0 0 1-.2-7.4 5.2 5.2 0 0 1 10.1 1.6 3.4 3.4 0 1 1 .2 6.8H7.7Z"></path><path d="M12 10v7"></path><path d="m9.8 12.2 2.2-2.2 2.2 2.2"></path></svg>
+              </span>
+              <span class="profile-quick-sync-copy">
+                <strong class="profile-quick-sync-label">همگام سازی گوگل درایو</strong>
+                <small id="profileQuickSyncState" class="profile-quick-sync-state">آماده بررسی</small>
+              </span>
+            </button>
+          </section>
+        </article>
+
+        <article class="profile-card profile-card-form profile-card-form-modern">
+          <header class="profile-card-headline profile-card-headline-modern">
+            <h3>اطلاعات دانشجو</h3>
+          </header>
+
+          <div class="profile-form-grid">
+            <label class="profile-field form-field profile-field-name form-field-name" for="profileName">
+              <span class="profile-field-label form-label">نام دانشجو <span class="profile-required-mark" aria-hidden="true">*</span></span>
+              <span class="profile-input-shell">
+                <span class="profile-input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.2"></circle><path d="M6 18c1.4-2.7 3.5-4 6-4s4.6 1.3 6 4"></path></svg>
+                </span>
+                <input id="profileName" class="form-control profile-control-input" data-action="profile-input" type="text" autocomplete="name" aria-describedby="profileNameError" required>
+              </span>
+              <small id="profileNameError" class="profile-error-text form-error" hidden>لطفا نام دانشجو را وارد کنید.</small>
+            </label>
+
+            <label class="profile-field form-field profile-field-major form-field-major" for="profileMajor">
+              <span class="profile-field-label form-label">رشته / گرایش</span>
+              <span class="profile-input-shell">
+                <span class="profile-input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 4 4.5 8 12 12 19.5 8 12 4z"></path><path d="M7.2 10.1V14c0 1.8 2.1 3.3 4.8 3.3s4.8-1.5 4.8-3.3v-3.9"></path></svg>
+                </span>
+                <input id="profileMajor" class="form-control profile-control-input" data-action="profile-input" type="text" autocomplete="organization-title">
+              </span>
+            </label>
+
+            <label class="profile-field form-field profile-field-semester form-field-semester" for="profileSemester">
+              <span class="profile-field-label form-label">ترم</span>
+              <span class="profile-input-shell profile-input-shell-select">
+                <span class="profile-input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M4 10h16"></path></svg>
+                </span>
+                <select id="profileSemester" class="form-control profile-control-input" data-action="profile-input">
+                  <option value="1">ترم 1</option>
+                  <option value="2" selected>ترم 2</option>
+                  <option value="3">ترم 3</option>
+                  <option value="4">ترم 4</option>
+                  <option value="5">ترم 5</option>
+                  <option value="6">ترم 6</option>
+                  <option value="7">ترم 7</option>
+                  <option value="8">ترم 8</option>
+                  <option value="9">ترم 9</option>
+                  <option value="10">ترم 10</option>
+                </select>
+              </span>
+            </label>
+          </div>
+          <div class="profile-form-actions">
+            <button id="profileSaveBtn" class="form-control profile-save-btn" type="button" data-action="profile-save-info">ثبت اطلاعات</button>
+            <button id="profileNewSemesterBtn" class="form-control profile-semester-btn" type="button" data-action="profile-start-new-semester">شروع ترم جدید</button>
+          </div>
+        </article>
+
+        <article class="profile-card profile-card-data profile-data-lab" aria-label="مدیریت فایل داده">
+          <header class="profile-card-headline profile-card-data-headline">
+            <div class="profile-data-title-wrap">
+              <div class="profile-data-title-row">
+                <span class="profile-data-tag profile-data-tag-icon" role="img" aria-label="نشان مدیریت داده هوشمند">
+                  <svg viewBox="0 0 28 28" aria-hidden="true" focusable="false">
+                    <rect class="tag-ring" x="2.25" y="2.25" width="23.5" height="23.5" rx="7.5"></rect>
+                    <path class="tag-core" d="M9 10.5 14 7.7l5 2.8v7L14 21l-5-2.8Z"></path>
+                    <path class="tag-core-lines" d="M14 7.7v4.9m5-2.1-5 2.1-5-2.1m5 2.1V21"></path>
+                    <circle class="tag-node" cx="8.3" cy="8.3" r="1.1"></circle>
+                    <circle class="tag-node" cx="19.7" cy="8.3" r="1.1"></circle>
+                    <circle class="tag-node" cx="14" cy="22" r="1.1"></circle>
+                  </svg>
+                </span>
+                <div class="profile-data-title-copy">
+                  <span class="profile-data-kicker">Data Studio</span>
+                  <h3>مدیریت فایل داده</h3>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <div class="profile-data-shell">
+            <input id="jsonImportInput" type="file" accept="application/json,.json" hidden>
+            <input id="questionPdfSourceInput" type="file" accept="application/pdf,.pdf,image/png,image/jpeg,.png,.jpg,.jpeg" hidden>
+
+            <aside class="profile-data-actions-bento" aria-label="ابزارهای سریع JSON">
+              <button id="jsonImportBtn" class="glass-btn profile-data-action-btn" type="button">
+                <span class="profile-data-action-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 4v11"></path><path d="m8.5 11.5 3.5 3.5 3.5-3.5"></path><rect x="4" y="17" width="16" height="3.5" rx="1.5"></rect></svg>
+                </span>
+                <span class="profile-data-action-copy">
+                  <strong>ورود فایل</strong>
+                  <small>بارگذاری و ادغام خودکار</small>
+                </span>
+              </button>
+
+              <button id="questionPdfSourceBtn" class="glass-btn profile-data-action-btn" type="button">
+                <span class="profile-data-action-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="4.5" y="3.8" width="11" height="16.4" rx="1.8"></rect><path d="M7.5 8.4h5"></path><path d="M7.5 11.4h5"></path><path d="M7.5 14.4h3.4"></path><path d="m14.2 14.2 2.6 2.6 4.7-4.7"></path></svg>
+                </span>
+                <span class="profile-data-action-copy">
+                  <strong>فایل مرجع عکس</strong>
+                  <small>PDF / PNG / JPEG برای برش خودکار</small>
+                </span>
+              </button>
+
+              <button id="jsonExportBtn" class="glass-btn profile-data-action-btn" type="button">
+                <span class="profile-data-action-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 20V9"></path><path d="m15.5 12.5-3.5-3.5-3.5 3.5"></path><rect x="4" y="3.5" width="16" height="3.5" rx="1.5"></rect></svg>
+                </span>
+                <span class="profile-data-action-copy">
+                  <strong>خروجی فایل</strong>
+                  <small>دریافت نسخه پشتیبان</small>
+                </span>
+              </button>
+
+              <button id="questionPdfSourceClearBtn" class="glass-btn ghost-btn profile-data-action-btn" type="button" data-action="clear-question-pdf-source">
+                <span class="profile-data-action-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M6.2 6.2 17.8 17.8"></path><path d="M17.8 6.2 6.2 17.8"></path><rect x="4.5" y="4.5" width="15" height="15" rx="2.2"></rect></svg>
+                </span>
+                <span class="profile-data-action-copy">
+                  <strong>حذف فایل مرجع</strong>
+                  <small>غیرفعال‌سازی برش تصویر</small>
+                </span>
+              </button>
+
+              <button id="jsonSchemaInfoBtn" class="glass-btn profile-data-action-btn" type="button" data-action="open-schema-modal" aria-controls="schemaModal" aria-expanded="false">
+                <span class="profile-data-action-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M12 16v.1"></path><path d="M9.8 9.6a2.3 2.3 0 1 1 3.8 1.7c-.8.5-1.3 1-1.3 2"></path></svg>
+                </span>
+                <span class="profile-data-action-copy">
+                  <strong>راهنمای JSON</strong>
+                  <small>فرمت دقیق + پرامپت AI</small>
+                </span>
+              </button>
+
+              <button class="glass-btn ghost-btn profile-data-action-btn profile-data-action-btn-accent" type="button" data-action="import-json-text">
+                <span class="profile-data-action-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 7.5h16"></path><path d="M4 12h10"></path><path d="M4 16.5h8"></path><path d="M16.8 13.8 20 17l-3.2 3.2"></path></svg>
+                </span>
+                <span class="profile-data-action-copy">
+                  <strong>افزودن متن JSON</strong>
+                  <small>ثبت مستقیم از کادر متنی</small>
+                </span>
+              </button>
+            </aside>
+
+            <div class="profile-data-main-grid">
+              <section class="profile-data-preview-panel" aria-label="پیش‌نمایش فایل مرجع">
+                <header class="profile-data-preview-head">
+                  <strong>پیش‌نمایش فایل مرجع</strong>
+                  <div id="questionPdfSourceStatus" class="profile-data-pdf-status" aria-live="polite">
+                    فایل مرجع: انتخاب نشده
+                  </div>
+                </header>
+                <div class="profile-data-preview-body">
+                  <img
+                    id="questionSourcePreviewImage"
+                    class="profile-data-preview-image"
+                    alt="پیش‌نمایش تصویر مرجع سوالات"
+                    loading="lazy"
+                    decoding="async"
+                    hidden
+                  >
+                  <iframe
+                    id="questionPdfPreviewFrame"
+                    class="profile-data-preview-frame"
+                    title="پیش‌نمایش فایل مرجع سوالات"
+                    loading="lazy"
+                    hidden
+                  ></iframe>
+                  <div id="questionPdfPreviewPlaceholder" class="profile-data-preview-placeholder" aria-live="polite">
+                    برای نمایش پیش‌نمایش، فایل مرجع را انتخاب کن.
+                  </div>
+                </div>
+              </section>
+
+              <section class="profile-data-editor profile-data-editor-panel">
+                <div class="profile-data-editor-head">
+                  <label class="profile-v2-json-label" for="jsonImportText">ورود JSON متنی</label>
+                </div>
+                <textarea id="jsonImportText" spellcheck="false" dir="ltr" placeholder='{
+  "questions": [
+    {
+      "subject": "ریاضی",
+      "chapter": "حد و پیوستگی",
+      "topic": "حدهای مثلثاتی",
+      "method": "جایگذاری",
+      "difficulty": 3,
+      "question_text": "با توجه به شکل حد را حساب کن. [[img:1]]",
+      "hint": "از حد معروف استفاده کن.",
+      "step_by_step_solution": "نتیجه 1 است.",
+      "assets": [
+        { "type": "image", "mode": "pdf-crop", "page": 1, "bbox": [0.1, 0.2, 0.9, 0.6], "bbox_unit": "ratio" }
+      ],
+      "solved": false,
+      "needsReview": true
+    }
+  ]
+}'></textarea>
+                <div class="json-text-actions profile-data-editor-actions">
+                  <button id="jsonTextImportBtn" class="glass-btn profile-data-editor-btn profile-data-editor-btn-primary" type="button" data-action="import-json-text">
+                    <span aria-hidden="true">+</span>
+                    <span>افزودن به بانک</span>
+                  </button>
+                  <button id="jsonTextClearBtn" class="glass-btn ghost-btn profile-data-editor-btn" type="button" data-action="clear-json-text">
+                    <span aria-hidden="true">×</span>
+                    <span>پاک‌سازی کادر</span>
+                  </button>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div id="jsonImportDiagnostics" class="json-import-diagnostics" hidden aria-live="polite" aria-atomic="true"></div>
+        </article>
+      </div>
+    </section>
+
+    <nav id="breadcrumbs" class="breadcrumbs" aria-label="مسیر ناوبری"></nav>
+
+    <main class="main-content" role="main">
+      <section id="levelContainer" class="surface"></section>
+    </main>
+
+    <footer id="statusBar" class="status-bar" aria-live="polite"></footer>
+
+    <nav id="pwaMobileDock" class="pwa-mobile-dock" aria-label="دسترسی سریع اپ مستقل" hidden>
+      <button id="pwaDockHomeBtn" class="pwa-mobile-dock-btn" type="button" data-action="goto-subjects" data-dock="home" aria-label="درس‌ها">
+        <span class="pwa-mobile-dock-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M3.6 11.2 12 4.8l8.4 6.4"></path><path d="M6.1 10.6V19h11.8v-8.4"></path></svg>
+        </span>
+        <span class="pwa-mobile-dock-label">درس‌ها</span>
+      </button>
+      <button id="pwaDockChaptersBtn" class="pwa-mobile-dock-btn" type="button" data-action="goto-chapters" data-dock="chapters" aria-label="فصل‌ها">
+        <span class="pwa-mobile-dock-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="4.2" y="5.2" width="15.6" height="13.6" rx="2.2"></rect><path d="M8 8.6h8"></path><path d="M8 12h6.2"></path><path d="M8 15.4h4.4"></path></svg>
+        </span>
+        <span class="pwa-mobile-dock-label">فصل‌ها</span>
+      </button>
+      <button id="pwaDockBankBtn" class="pwa-mobile-dock-btn" type="button" data-action="switch-tab" data-tab="bank" data-dock="bank" aria-label="بانک سوالات">
+        <span class="pwa-mobile-dock-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="4.5" y="5" width="15" height="14" rx="2.3"></rect><path d="M8 9h8"></path><path d="M8 12.5h8"></path><path d="M8 16h5"></path></svg>
+        </span>
+        <span class="pwa-mobile-dock-label">بانک</span>
+      </button>
+      <button id="pwaDockPracticeBtn" class="pwa-mobile-dock-btn" type="button" data-action="switch-tab" data-tab="practice" data-dock="practice" aria-label="حالت تمرین">
+        <span class="pwa-mobile-dock-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M7.2 4.8h9.6"></path><path d="M7.2 19.2h9.6"></path><path d="M9 4.8v5.2l3 2.2 3-2.2V4.8"></path><path d="m9 19.2 3-2.2 3 2.2"></path></svg>
+        </span>
+        <span class="pwa-mobile-dock-label">تمرین</span>
+      </button>
+      <button id="pwaDockExamBtn" class="pwa-mobile-dock-btn" type="button" data-action="switch-tab" data-tab="exam" data-dock="exam" aria-label="حالت آزمون">
+        <span class="pwa-mobile-dock-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="4.6" y="4.9" width="14.8" height="14.2" rx="2.2"></rect><path d="M8.4 9.2h7.2"></path><path d="M8.4 12.4h7.2"></path><path d="M8.4 15.6h4.1"></path></svg>
+        </span>
+        <span class="pwa-mobile-dock-label">آزمون</span>
+      </button>
+    </nav>
+
+    <button id="pwaScrollTopBtn" class="pwa-scroll-top-btn" type="button" data-action="scroll-top" aria-label="رفتن به بالای صفحه" hidden>
+      <span aria-hidden="true">↑</span>
+    </button>
+  </div>
+
+  <section id="toastStack" class="toast-stack" aria-live="polite" aria-atomic="false"></section>
+
+  <section id="schemaModal" class="schema-modal" hidden aria-hidden="true">
+    <div class="schema-modal-backdrop" data-action="close-schema-modal"></div>
+    <article class="schema-modal-card" role="dialog" aria-modal="true" aria-labelledby="schemaModalTitle">
+      <header class="schema-modal-head">
+        <h3 id="schemaModalTitle">راهنمای ساختار JSON</h3>
+        <button class="schema-close-btn" type="button" data-action="close-schema-modal" aria-label="بستن">×</button>
+      </header>
+      <p class="schema-modal-subtitle">فرمت معتبر JSON (پیشنهادی: <code dir="ltr">{"questions":[...]}</code>) برای ورود فایل یا متن:</p>
+      <pre class="schema-pre"><code id="schemaCodeBlock" class="schema-code"></code></pre>
+      <div id="schemaGuideNotes" class="schema-guide-notes" aria-live="polite"></div>
+    </article>
+  </section>
+
+  <script src="chapterTreeRenderer.js" defer></script>
+  <script src="questionPdfAssetPlugin.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="appExperienceEnhancer.js" defer></script>
+</body>
+</html>
